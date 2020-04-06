@@ -1,5 +1,7 @@
 # MeTaLS-example
 
+Link to source repository:  [https://github.com/FreedomBen/metals-example](https://github.com/FreedomBen/metals-example)
+
 This is an example HTTP service that makes use of [MeTaLS](https://github.com/FreedomBen/metals) to add mTLS access control.  It can be used as a starting point for adding mTLS to your own service.
 
 For more details about MeTaLS, including various configuration options, there is extensive documentation available on the [MeTaLS Github page](https://github.com/FreedomBen/metals)
