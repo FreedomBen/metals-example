@@ -16,30 +16,30 @@ $PODMAN run \
   --detach \
   --user 12345 \
   \
-  --env MTLS_SSL=on \
-  --env MTLS_SSL_VERIFY_CLIENT=on \
-  --env MTLS_DEBUG=true \
+  --env METALS_SSL=on \
+  --env METALS_SSL_VERIFY_CLIENT=on \
+  --env METALS_DEBUG=true \
   --env VAULT_ADDR=http://localhost:8200 \
   --env VAULT_ROOT_PATH=v1/secret/data \
   --env VAULT_TOKEN="$VAULT_TOKEN" \
   \
-  --env MTLS_PROXY_PASS_PROTOCOL=http \
-  --env MTLS_PROXY_PASS_HOST=127.0.0.1 \
-  --env MTLS_FORWARD_PORT=8080 \
+  --env METALS_PROXY_PASS_PROTOCOL=http \
+  --env METALS_PROXY_PASS_HOST=127.0.0.1 \
+  --env METALS_FORWARD_PORT=8080 \
   \
-  --env MTLS_VAULT_SSL_CERTIFICATE_KEY=crt \
-  --env MTLS_VAULT_SSL_CERTIFICATE_PATH=mtls/script/server \
+  --env METALS_PUBLIC_CERT_VAULT_KEY=crt \
+  --env METALS_PUBLIC_CERT_VAULT_PATH=mtls/script/server \
   \
-  --env MTLS_VAULT_SSL_CERTIFICATE_KEY_KEY=key \
-  --env MTLS_VAULT_SSL_CERTIFICATE_KEY_PATH=mtls/script/server \
+  --env METALS_PRIVATE_KEY_VAULT_KEY=key \
+  --env METALS_PRIVATE_KEY_VAULT_PATH=mtls/script/server \
   \
-  --env MTLS_VAULT_SSL_TRUSTED_CERTIFICATE_KEY=server \
-  --env MTLS_VAULT_SSL_TRUSTED_CERTIFICATE_PATH=mtls/script/trust-chain \
+  --env METALS_SERVER_CHAIN_VAULT_KEY=server \
+  --env METALS_SERVER_CHAIN_VAULT_PATH=mtls/script/trust-chain \
   \
-  --env MTLS_VAULT_SSL_CLIENT_CERTIFICATE_KEY=client \
-  --env MTLS_VAULT_SSL_CLIENT_CERTIFICATE_PATH=mtls/script/trust-chain  \
+  --env METALS_CLIENT_CHAIN_VAULT_KEY=client \
+  --env METALS_CLIENT_CHAIN_VAULT_PATH=mtls/script/trust-chain  \
   \
-  --env MTLS_HEALTH_CHECK_PATH=/health \
+  --env METALS_HEALTH_CHECK_PATH=/health \
   \
   --name "$METALS_CONTAINER" \
   --pod "$PODNAME" \

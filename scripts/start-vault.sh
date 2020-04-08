@@ -9,14 +9,11 @@ else
   echo "Couldn't find common.sh.  Run from root dir or scripts dir"
 fi
 
-
 main ()
 {
-  stop_metals
-  stop_metals_example
-  stop_vault
-  remove_pod
-  true # mask errors
+  start_vault
+  sleep 5
+  write_keys_to_vault_same_path
 }
 
 main "$@"
