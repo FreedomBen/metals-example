@@ -11,8 +11,7 @@ fi
 
 main ()
 {
-  stop_metals
-  shell_metals
+  test_nginx_116
 }
 
 main "$@"
