@@ -58,6 +58,7 @@ fi
 export CERT_DIR="$CERTS/simple-root-client-server"
 export UNTRUSTED_CERT_DIR="$CERTS/valid-but-untrusted-root-intermediate"
 
+#export SERVER_KEY_FILE="$CERT_DIR/server-encrypted.key"
 export SERVER_KEY_FILE="$CERT_DIR/server.key"
 export SERVER_CERT_FILE="$CERT_DIR/server.crt"
 export CLIENT_KEY_FILE="$CERT_DIR/server.key"
@@ -217,6 +218,8 @@ start_metals ()
     --env "METALS_TLS_VERIFY_CLIENT=${3:-on}" \
     --env METALS_DEBUG=true \
     --env METALS_DEBUG_UNSAFE=false \
+    --env METALS_LOG_ROTATION_ENABLED='on' \
+    --env METALS_LOG_ROTATION_HOURS='1' \
     \
     --env METALS_PROXY_PASS_PROTOCOL=http \
     --env METALS_PROXY_PASS_HOST=127.0.0.1 \
@@ -260,6 +263,8 @@ start_metals_vault ()
     --env "METALS_TLS_VERIFY_CLIENT=${3:-on}" \
     --env METALS_DEBUG=true \
     --env METALS_DEBUG_UNSAFE=false \
+    --env METALS_LOG_ROTATION_ENABLED='on' \
+    --env METALS_LOG_ROTATION_HOURS='1' \
     \
     --env METALS_PROXY_PASS_PROTOCOL=http \
     --env METALS_PROXY_PASS_HOST=127.0.0.1 \
@@ -305,6 +310,8 @@ start_metals_vault_diff_paths ()
     --env METALS_TLS_VERIFY_CLIENT=on \
     --env METALS_DEBUG=true \
     --env METALS_DEBUG_UNSAFE=false \
+    --env METALS_LOG_ROTATION_ENABLED='on' \
+    --env METALS_LOG_ROTATION_HOURS='1' \
     \
     --env METALS_PROXY_PASS_PROTOCOL=http \
     --env METALS_PROXY_PASS_HOST=127.0.0.1 \
