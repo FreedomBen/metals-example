@@ -4,7 +4,8 @@ require 'sinatra'
 require 'json'
 
 set :port, 8080
-set :bind, '0.0.0.0'
+#set :bind, '0.0.0.0'
+set :bind, '127.0.0.1'
 
 def object_one
   {
